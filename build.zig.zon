@@ -1,0 +1,17 @@
+.{
+    .name = .goome_app,
+    .version = "0.1.0",
+    .fingerprint = 0xeac7244876b18e58,
+    .minimum_zig_version = "0.15.2",
+    .dependencies = .{
+        .goome = .{
+            .url = "https://github.com/goome-ui/zig-goome/releases/download/v0.5.0/zig-goome-0.5.0.tar.gz",
+            .hash = "goome-0.5.0-JM4gI9agFwCEX6oy88y5ukMLTkwrCkLgC9LQ2e0n7Et1",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
