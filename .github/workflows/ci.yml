@@ -1,0 +1,64 @@
+name: ci
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      GOOME_BACKEND: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: xcode zig can link with
+        if: runner.os == 'macOS'
+        run: |
+          for x in /Applications/Xcode_26.3.app /Applications/Xcode_16.4.app; do
+            if [ -d "$x" ]; then sudo xcode-select -s "$x"; break; fi
+          done
+          xcrun --show-sdk-version
+      - uses: mlugg/setup-zig@v2
+        with:
+          version: 0.15.2
+      - name: build
+        run: |
+          zig fmt --check build.zig build.zig.zon src
+          zig build
+      - name: run on the test backend
+        run: |
+          mkdir -p shots
+          out=$(GOOME_TEST_SHOTS=shots GOOME_TEST_SCRIPT="screen 1280x720 1; 3 click 60,28; end 6" ./zig-out/bin/my-goome-app)
+          echo "$out"
+          ls shots | grep -q ppm
+          if [ -d variants ]; then echo "$out" | grep -q "overlay mode"; fi
+      - name: other templates
+        if: hashFiles('variants/**') != ''
+        run: |
+          for v in variants/*/; do
+            n=$(basename "$v")
+            rm -rf "../v-$n"
+            mkdir "../v-$n"
+            cp -R build.zig build.zig.zon src "../v-$n/"
+            cp -R "$v"/. "../v-$n/"
+            zig fmt --check "../v-$n/src"
+            (cd "../v-$n" && zig build)
+            mkdir -p "shots-$n"
+            GOOME_TEST_SHOTS="shots-$n" GOOME_TEST_SCRIPT="screen 1280x720 1; 2 hotkey alt+m; 3 click 100,140; end 6" "../v-$n/zig-out/bin/my-goome-app"
+            ls "shots-$n" | grep -q ppm
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shots-${{ runner.os }}
+          path: shots*/
+          if-no-files-found: ignore
