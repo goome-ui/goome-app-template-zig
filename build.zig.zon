@@ -5,8 +5,8 @@
     .minimum_zig_version = "0.15.2",
     .dependencies = .{
         .goome = .{
-            .url = "https://github.com/goome-ui/zig-goome/releases/download/v0.5.2/zig-goome-0.5.2.tar.gz",
-            .hash = "goome-0.5.2-JM4gI6GiFwBSQLnIdW8Bev3Lyu0rwU0OZYv8Wo65mXy1",
+            .url = "https://github.com/goome-ui/zig-goome/archive/refs/tags/v0.5.3.tar.gz",
+            .hash = "goome-0.5.3-JM4gI7miFwD5fDN7M_WUseh3Y6LFk1kTDdz7xjhUU9b5",
         },
     },
     .paths = .{
