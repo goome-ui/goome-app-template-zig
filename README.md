@@ -9,27 +9,27 @@
 </p>
 
 <p align="center">
-  <img src="https://goome-ui.github.io/docs/assets/badges/zig-0152.svg" alt="Zig 0.15.2">
-  <img src="https://goome-ui.github.io/docs/assets/badges/template-use-me.svg" alt="template">
+  <img src="https://goome.wtf/badges/zig-0152.svg" alt="Zig 0.15.2">
+  <img src="https://goome.wtf/badges/template-use-me.svg" alt="template">
   <img src="https://img.shields.io/badge/license-GPL--3.0-1b1d22?style=flat-square" alt="GPL-3.0">
 </p>
 
 <p align="center">
   Hit <b>Use this template</b> up top and you get your own copy that builds right away, CI included. Or let <a href="https://github.com/goome-ui/goome-cli">goome-cli</a> make it with your own name already in it.<br>
-  Its <a href="https://github.com/goome-ui/zig-goome">zig-goome</a> underneath, the docs for the whole ui kit are at <a href="https://goome-ui.github.io/docs/">goome-ui.github.io/docs</a>.<br> <br>
+  Its <a href="https://github.com/goome-ui/zig-goome">zig-goome</a> underneath, the docs for the whole ui kit are at <a href="https://goome.wtf/docs/">goome.wtf/docs</a>.<br> <br>
   Do you like this project? If so, please let me know!
   <a href="https://sevvy-wevvy.com/discord">Discord</a>
 </p>
 
 <p align="center">
-  <a href="https://goome-ui.github.io/docs/">Docs</a> &nbsp;·&nbsp;
+  <a href="https://goome.wtf/docs/">Docs</a> &nbsp;·&nbsp;
   <a href="https://github.com/goome-ui/goome-cli">goome-cli</a> &nbsp;·&nbsp;
   <a href="https://github.com/goome-ui/zig-goome">zig-goome</a> &nbsp;·&nbsp;
   <a href="https://github.com/goome-ui/examples">Examples</a>
 </p>
 
 <p align="center">
-  The <a href="https://goome-ui.github.io/docs/downloads/">ready made apps</a> on the <a href="https://github.com/goome-ui/examples/releases/latest">examples release</a> show what you can build from here.<br>
+  The <a href="https://goome.wtf/docs/downloads/">ready made apps</a> on the <a href="https://github.com/goome-ui/examples/releases/latest">examples release</a> show what you can build from here.<br>
   If you get stuck, ask in <a href="https://github.com/goome-ui/c-goome/discussions">Discussions</a>. The <a href="https://github.com/goome-ui/zig-goome/labels/good%20first%20issue">good first issues</a> on zig-goome are small ones if you want to help.
 </p>
 
